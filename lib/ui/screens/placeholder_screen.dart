@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import '../widgets/bloom_timer.dart';
+import '../../../theme/theme_notifier.dart';
 import 'package:provider/provider.dart';
-import '../../theme/theme_notifier.dart';
 
 class PlaceholderScreen extends StatelessWidget {
   const PlaceholderScreen({super.key});
@@ -26,11 +27,8 @@ class PlaceholderScreen extends StatelessWidget {
         ],
       ),
       body: const Center(
-        child: Text(
-          "FocusBloom UI – Coming Soon",
-          style: TextStyle(fontSize: 18),
-        ),
+        child: BloomTimer(),
       ),
     );
   }
-} 
+}
