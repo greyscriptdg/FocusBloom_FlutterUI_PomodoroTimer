@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../widgets/bloom_timer.dart';
+import '../widgets/session_toggle_buttons.dart';
 import '../../../theme/theme_notifier.dart';
+import '../../models/session_type.dart';
 import 'package:provider/provider.dart';
 
 class PlaceholderScreen extends StatelessWidget {
@@ -26,8 +28,18 @@ class PlaceholderScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Center(
-        child: BloomTimer(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const BloomTimer(),
+          const SizedBox(height: 40),
+          SessionToggleButtons(
+            onSessionSelected: (SessionType session) {
+              // Later: update timer duration & color
+              debugPrint('Selected session: $session');
+            },
+          ),
+        ],
       ),
     );
   }
